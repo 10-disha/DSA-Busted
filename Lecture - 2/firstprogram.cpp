@@ -3,5 +3,5 @@ using namespace std;
 
 int main()
 {
-    cout << "my name is disha" << end;
+    cout << "namaste duniya";
 }
