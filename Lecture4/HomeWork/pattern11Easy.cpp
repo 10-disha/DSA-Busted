@@ -10,12 +10,14 @@ int main()
 
     while (i <= n)
     {
-        int j = 1;
 
-        while (j <= i)
+        int j = 1;
+        char start = ('A' + n - i);
+        while (j <= n)
         {
-            char ch = ('A' + i + j - 2);
-            cout << ch;
+
+            cout << start;
+            start++;
             j++;
         }
         cout << endl;

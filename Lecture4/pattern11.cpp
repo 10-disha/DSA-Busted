@@ -7,10 +7,11 @@ int main()
     cin >> n;
 
     int i = 1;
-    char ch = 'A';
+
     while (i <= n)
     {
         int j = 1;
+        char ch = 'A' + i + j - 2;
         while (j <= n)
         {
             cout << ch;

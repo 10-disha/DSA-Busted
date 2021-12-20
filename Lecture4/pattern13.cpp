@@ -7,6 +7,7 @@ int main()
     cin >> n;
 
     int i = 1;
+    char count = 'A';
 
     while (i <= n)
     {
@@ -14,8 +15,8 @@ int main()
 
         while (j <= i)
         {
-            char ch = ('A' + i + j - 2);
-            cout << ch;
+            cout << count;
+            count++;
             j++;
         }
         cout << endl;
