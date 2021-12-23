@@ -33,7 +33,7 @@ int main()
     cin >> a >> b;
 
     int ans = gcd(a, b);
-    cout << "GCD of " << a << "&" << b << "is";
+    cout << "GCD of " << a << "&" << b << "is" << ans;
 
     return 0;
 }
