@@ -1,8 +1,20 @@
 #include <iostream>
 using namespace std;
 
+int print(int arr[], int n)
+{
+    cout << "size of array is:" << n << endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
 bool isPresent(int arr[], int size, int key)
 {
+    print(arr, size);
     if (size == 0)
         return false;
 
