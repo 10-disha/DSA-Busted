@@ -7,16 +7,16 @@ int main()
     cin >> n;
 
     int i = 1;
-    char value = 'A';
+
     while (i <= n)
     {
         int j = 1;
-        char ch = 'A' + i + j - 2;
-        while (j <= n)
+        // char ch = 'A' + i + j - 2;
+        while (j <= i)
         {
-
+            char ch = 'A' + i - 1;
             cout << ch;
-            // value = value + 1;
+            ch = ch + 1;
             j = j + 1;
         }
 
