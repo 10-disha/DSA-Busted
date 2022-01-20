@@ -1,14 +1,3 @@
-1. what will be output
-
-int a, b=1;
-a=10;
-if(++a)
-cout<<b;
-else
-cout<<++b;
-
-2. decimal to binary
-
 #include <iostream>
 #include <math.h>
 
