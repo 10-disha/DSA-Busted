@@ -71,41 +71,11 @@ void print(Node *tail)
     cout << endl;
 }
 
-// to check whether LL contains loops or not, we will be using map for the same.
-
-// bool detectLoop(Node *head)
-// {
-
-//     if (head == NULL)
-//         return false;
-
-//     map<Node *, bool> visited;
-
-//     Node *temp = head;
-
-//     while (temp != NULL)
-//     {
-
-//         // cycle is present
-//         if (visited[temp] == true)
-
-//         {
-//             cout << "present on element" << temp->data << endl;
-//             return true;
-//         }
-
-//         visited[temp] = true;
-//         temp = temp->next;
-//     }
-
-//     return false;
-// }
-
-bool floydDetect(Node *head)
+Node *floydDetect(Node *head)
 {
 
     if (head == NULL)
-        return false;
+        return NULL;
 
     Node *slow = head;
     Node *fast = head;
@@ -128,6 +98,44 @@ bool floydDetect(Node *head)
     }
 
     return NULL;
+}
+
+Node *getStartingNode(Node *head)
+{
+
+    if (head == NULL)
+        return NULL;
+
+    Node *intersection = floydDetect(head);
+
+    if (intersection == NULL)
+        return NULL;
+
+    Node *slow = head;
+
+    while (slow != intersection)
+    {
+        slow = slow->next;
+        intersection = intersection->next;
+    }
+
+    return slow;
+}
+
+void removeLoop(Node *head)
+{
+    if (head == NULL)
+        return;
+
+    Node *startOfLoop = getStartingNode(head);
+    Node *temp = startOfLoop;
+
+    while (temp->next != startOfLoop)
+    {
+        temp = temp->next;
+    }
+
+    temp->next = NULL;
 }
 
 int main()
@@ -156,6 +164,13 @@ int main()
     {
         cout << "loops absent";
     }
+
+    Node *loop = getStartingNode(tail);
+
+    cout << "starting node:" << loop->data << endl;
+
+    removeLoop(tail);
+    print(tail);
 
     return 0;
 }
